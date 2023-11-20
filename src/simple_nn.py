@@ -33,7 +33,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 X_train_tensor = torch.tensor(X_train.values, dtype=torch.float32)
 y_train_tensor = torch.tensor(y_train.values, dtype=torch.float32)
 X_test_tensor = torch.tensor(X_test.values, dtype=torch.float32)
-y_test_tensor = torch.tensor(y_test.values, dtype=torch.float32)s
+y_test_tensor = torch.tensor(y_test.values, dtype=torch.float32)
 
 # Create DataLoader for training
 train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
