@@ -82,11 +82,11 @@ def main():
     # Hyperparameter configuration
     config = {
         'input_size': len(features),
-        'num_layers': 5,
-        'hidden_size': 128,
+        'num_layers': 6,
+        'hidden_size': 64,
         'output_size': 1,
         'learning_rate': 0.01,
-        'batch_size': 128,
+        'batch_size': 64,
         'num_epochs': 200
     }
 
@@ -164,7 +164,7 @@ def main():
         plt.figure(figsize=(10, 6))
         plt.plot(y_test_tensor, label='Actual Total Points')
         plt.plot(y_pred_nn, label='Predicted Total Points')
-        plt.title(f'Mo Salah: Actual vs Predicted Total Points\nTotal Points (Actual): {total_points_actual:.0f}, Total Points (Predicted): {total_points_predicted:.0f}')
+        plt.title(f'Actual vs Predicted Total Points\nTotal Points (Actual): {total_points_actual:.0f}, Total Points (Predicted): {total_points_predicted:.0f}')
         plt.xlim(0,37)
         plt.xlabel('Gameweek')
         plt.ylabel('Total Points')
