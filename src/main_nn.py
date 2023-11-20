@@ -69,7 +69,7 @@ def main():
         'output_size': 1,
         'learning_rate': 0.001,
         'batch_size': 64,
-        'num_epochs': 100
+        'num_epochs': 200
     }
 
     # Instantiate the model
@@ -128,12 +128,13 @@ def main():
     X_test = test_data[features]
     y_test = test_data[target]
 
-    # Handle missing values
+    # Handle missing values and convert to numeric
+    X_test = X_test.copy()
+    
     X_test['assists'].fillna(0, inplace=True)
     X_test['minutes'].fillna(0, inplace=True)
     X_test['goals_scored'].fillna(0, inplace=True)
 
-    # Convert to numeric
     X_test['assists'] = pd.to_numeric(X_test['assists'], errors='coerce')
     X_test['minutes'] = pd.to_numeric(X_test['minutes'], errors='coerce')
     X_test['goals_scored'] = pd.to_numeric(X_test['goals_scored'], errors='coerce')
