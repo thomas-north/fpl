@@ -1,5 +1,5 @@
 # fpl
-A neural network to play FPL
+A neural network to play FPL. Data collected from FPL and Understat using resources developed by https://github.com/vaastav/Fantasy-Premier-League.
 
 # usage
 
