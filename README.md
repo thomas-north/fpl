@@ -15,7 +15,7 @@ Navigate to `src/` folder, then run:
 python main_nn.py
 ```
 
-This script will store a saved version of the model as `model/trained_model.pth`.
+This script will store a saved version of the model as `model/trained_model.pth`. Try editing the parameters stored in the `config` dictionary of the `main()` function in `src/main_nn.py` to fine-tune the model.
 
 You can install all necessary dependencies using pip, run:
 
