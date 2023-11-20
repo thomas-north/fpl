@@ -16,3 +16,9 @@ python main_nn.py
 ```
 
 This script will store a saved version of the model as `model/trained_model.pth`.
+
+You can install all necessary dependencies using pip, run:
+
+```
+pip install -r requirements.txt
+```
