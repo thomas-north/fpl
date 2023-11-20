@@ -61,9 +61,13 @@ def predict(model, input_data):
     return predictions.numpy()
 
 def main():
+    # Select features and target variable
+    features = ['assists', 'minutes', 'goals_scored', 'ict_index', 'threat']
+    target = 'total_points'
+
     # Hyperparameter configuration
     config = {
-        'input_size': 5,  # Adjust based on your actual input size
+        'input_size': len(features),
         'num_layers': 2,
         'hidden_size': 64,
         'output_size': 1,
@@ -84,10 +88,6 @@ def main():
             # Load training data
             szn = '{}'.format(str(season)+'-'+str(season+1)[2:])
             train_data = load_data(szn, gameweek)
-
-            # Select features and target variable
-            features = ['assists', 'minutes', 'goals_scored', 'ict_index', 'threat']
-            target = 'total_points'
 
             X = train_data[features]
             y = train_data[target]
