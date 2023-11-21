@@ -82,13 +82,13 @@ def main():
     # Hyperparameter configuration
     config = {
         'input_size': len(features),
-        'num_layers': 6,
-        'hidden_size': 64,
-        'output_size': 1,
-        'learning_rate': 0.01,
-        'batch_size': 64,
+        'num_layers': 6, 
+        'hidden_size': 128, 
+        'output_size': 1, 
+        'learning_rate': 0.01, 
+        'batch_size': 32, 
         'num_epochs': 200
-    }
+        }
 
     # Instantiate the model
     model = NeuralNetwork(**config)

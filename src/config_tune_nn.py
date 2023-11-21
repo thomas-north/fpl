@@ -168,20 +168,31 @@ def main():
     # Hyperparameter grid for grid search
     config = {
         'input_size': [len(features)],
-        'num_layers': [4, 5, 6],
-        'hidden_size': [64, 128, 256],
+        'num_layers': [5, 6, 7],
+        'hidden_size': [128, 256],
         'output_size': [1],
-        'learning_rate': [0.001, 0.01, 0.05],
-        'batch_size': [64, 128, 256],
-        'num_epochs': [100, 200, 300],
+        'learning_rate': [0.001, 0.01],
+        'batch_size': [32, 64, 128],
+        'num_epochs': [200, 300],
     }
 
     # Use grid search to find the best combination of hyperparameters
     best_params, best_mse = grid_search(player_name, config, features, target)
-    print("\n", best_params, best_mse)
 
     # Update the config dictionary with the best parameters
     config.update(best_params)
+
+    print("\nBest model parameters:\n", best_params) 
+
+    print("Best model parameters:\n", config) 
+
+    print(config['input_size'])
+    print(config['num_layers'])
+    print(config['hidden_size'])
+    print(config['output_size'])
+    print(config['learning_rate'])
+    print(config['batch_size'])
+    print(config['num_epochs'])
 
     # Train the model with the best parameters
     model = NeuralNetwork(**config)
